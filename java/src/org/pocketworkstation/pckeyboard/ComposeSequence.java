@@ -16,9 +16,40 @@
 
 package org.pocketworkstation.pckeyboard;
 
+import android.util.Log;
+
 public class ComposeSequence extends ComposeBase {
     public ComposeSequence(ComposeSequencing user) {
             init(user);
+    }
+
+    public String executeToString(int code) {
+	if (composeBuffer.length() == 0) {
+	    // Nothing composed yet
+	    String composed = super.executeToString(code);
+	    return (code == LatinKeyboardView.KEYCODE_ESCAPE) ? null : composed;
+	}
+
+	if (composeBuffer.charAt(0) == (char) LatinKeyboardView.KEYCODE_ESCAPE) {
+	    // compose sequence begins with Escape
+	    // ⇒ handle as a code point in hexadecimal
+	    code = Character.toUpperCase((char) code);
+	    if (code < 48 || (code > 57 && code < 65) || code > 70) {
+		// evaluate when code is not that of a hex digit
+		code = Integer.parseInt(composeBuffer.substring(1), 16);
+		super.executeToString(code);
+		if ((code >= 0 && code < 0xD800) || (code >= 0xE000 && code < 0x110000)) {
+		    return "" + (char) code;
+		}
+		return "";
+	    }
+	    // we have a hex digit – append it
+	    super.executeToString(code);
+	    return null;
+	}
+
+	// we have something else – treat as normal
+	return super.executeToString(code);
     }
     
     static {
