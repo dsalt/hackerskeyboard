@@ -35,11 +35,13 @@ public class ComposeSequence extends ComposeBase {
 	    // ⇒ handle as a code point in hexadecimal
 	    code = Character.toUpperCase((char) code);
 	    if (code < 48 || (code > 57 && code < 65) || code > 70) {
-		// evaluate when code is not that of a hex digit
-		code = Integer.parseInt(composeBuffer.substring(1), 16);
-		super.executeToString(code);
-		if ((code >= 0 && code < 0xD800) || (code >= 0xE000 && code < 0x110000)) {
-		    return "" + (char) code;
+		if (composeBuffer.length() > 1) {
+		    // evaluate when code is not that of a hex digit
+		    code = Integer.parseInt(composeBuffer.substring(1), 16);
+		    super.executeToString(code);
+		    if ((code >= 0 && code < 0xD800) || (code >= 0xE000 && code < 0x110000)) {
+			return "" + (char) code;
+		    }
 		}
 		return "";
 	    }
