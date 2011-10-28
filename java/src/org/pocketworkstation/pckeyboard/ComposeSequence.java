@@ -33,6 +33,21 @@ public class ComposeSequence extends ComposeBase {
 	if (composeBuffer.charAt(0) == (char) LatinKeyboardView.KEYCODE_ESCAPE) {
 	    // compose sequence begins with Escape
 	    // ⇒ handle as a code point in hexadecimal
+	    if (code == Keyboard.KEYCODE_DELETE) {
+		// remove the last-pressed digit
+		int len = composeBuffer.length();
+		if (len > 1) {
+		   --len;
+		}
+		super.executeToString(code); // for modifier key side-effects
+		composeBuffer.setLength(len); // trim it
+		return null;
+	    }
+	    if (code == LatinKeyboardView.KEYCODE_ESCAPE) {
+		// cancel (same as another Compose press)
+		super.executeToString(code); // again, side-effects
+		return "";
+	    }
 	    code = Character.toUpperCase((char) code);
 	    if (code < 48 || (code > 57 && code < 65) || code > 70) {
 		if (composeBuffer.length() > 1) {
