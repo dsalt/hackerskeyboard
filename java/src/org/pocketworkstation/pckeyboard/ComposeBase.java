@@ -99,7 +99,9 @@ public abstract class ComposeBase {
                 && Character.isLowerCase(code)) {
             code = Character.toUpperCase(code);
         }
-        bufferKey((char) code);
+        if (code != -1) {
+            bufferKey((char) code);
+        }
         composeUser.updateShiftKeyState(composeUser.getCurrentInputEditorInfo());
 
         String composed = get(composeBuffer.toString());

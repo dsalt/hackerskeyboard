@@ -53,10 +53,23 @@ public class ComposeSequence extends ComposeBase {
 		if (composeBuffer.length() > 1) {
 		    // evaluate when code is not that of a hex digit
 		    code = Integer.parseInt(composeBuffer.substring(1), 16);
-		    super.executeToString(code);
 		    if ((code >= 0 && code < 0xD800) || (code >= 0xE000 && code < 0x110000)) {
-			return "" + (char) code;
+			if (code >= 0x10000) {
+			    code -= 0x10000;
+			    // we need a surrogate pair here, I think
+			    char high = (char) (0xD800 + (code >> 10));
+			    char low = (char) (0xDC00 + (code & 0x3FF));
+			    super.executeToString(high);
+			    super.executeToString(low);
+			    return "" + high + low;
+			}
+			else {
+			    super.executeToString(code);
+			    return "" + (char) code;
+			}
 		    }
+		    // we reach this if the code is invalid
+		    super.executeToString(-1);
 		}
 		return "";
 	    }
