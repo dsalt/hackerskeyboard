@@ -218,4 +218,15 @@
     <string name="key_ab10_main">/</string>
     <string name="key_ab10_shift">\?</string>
     <string name="key_ab10_alt">/\?¿</string>
+
+
+    <string name="key_compact_2_shift">\@</string>
+    <string name="key_compact_2_alt">~</string>
+    <string name="key_compact_3_shift">#</string>
+    <string name="key_compact_apos_shift">\"</string>
+    <string name="key_compact_apos_alt">|</string>
+    <string name="key_compact_slash_alt">\\</string>
+    <string name="key_compact_tilde">~</string>
+    <string name="key_compact_bar">|</string>
+    <string name="key_compact_backslash">\\</string>
 </resources>

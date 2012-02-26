@@ -152,12 +152,12 @@
             android:keyWidth="12%p"
             android:keyEdgeFlags="left"
             android:keyLabel="ScrL" />
-        <Key android:keyLabel="~" android:keyWidth="9%p" />            
+        <Key android:keyLabel="@string/key_compact_tilde" android:keyWidth="9%p" />
         <Key android:keyLabel="_" android:keyWidth="9%p" />            
         <Key android:keyLabel="+" android:keyWidth="9%p" />            
         <Key android:keyLabel="{" android:keyWidth="9%p" />            
         <Key android:keyLabel="}" android:keyWidth="9%p" />            
-        <Key android:keyLabel="|" android:keyWidth="9%p" />            
+        <Key android:keyLabel="@string/key_compact_bar" android:keyWidth="9%p" />
         <Key android:keyLabel=":" android:keyWidth="9%p" />            
 
         <Key
@@ -187,7 +187,7 @@
         <Key android:keyLabel="=" android:keyWidth="9%p" />            
         <Key android:keyLabel="[" android:keyWidth="9%p" />            
         <Key android:keyLabel="]" android:keyWidth="9%p" />            
-        <Key android:keyLabel="\\" android:keyWidth="9%p" />            
+        <Key android:keyLabel="@string/key_compact_backslash" android:keyWidth="9%p" />
         <Key android:keyLabel=";" android:keyWidth="9%p" />            
 
         <Key
