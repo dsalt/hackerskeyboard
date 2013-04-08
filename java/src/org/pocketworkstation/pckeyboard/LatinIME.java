@@ -953,6 +953,12 @@ public class LatinIME extends InputMethodService implements
     }
 
     @Override
+    public void onUpdateExtractingVisibility(EditorInfo ei) {
+        ei.imeOptions |= EditorInfo.IME_FLAG_NO_EXTRACT_UI;
+        super.onUpdateExtractingVisibility(ei);
+    }
+
+    @Override
     public void onUpdateSelection(int oldSelStart, int oldSelEnd,
             int newSelStart, int newSelEnd, int candidatesStart,
             int candidatesEnd) {
