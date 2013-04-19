@@ -55,14 +55,12 @@ public class ComposeSequence extends ComposeBase {
             put(" -", "~");
             put("  ", " ");
             put(" .", " ");
-            put("oc", "©");
+            puti("oc", "©");
             put("oC", "©");
             put("Oc", "©");
-            put("OC", "©");
-            put("or", "®");
+            puti("or", "®");
             put("oR", "®");
             put("Or", "®");
-            put("OR", "®");
             put(".>", "›");
             put(".<", "‹");
             put("..", "…");
@@ -70,8 +68,7 @@ public class ComposeSequence extends ComposeBase {
             put(".=", "•");
             put("!^", "¦");
             put("!!", "¡");
-            put("p!", "¶");
-            put("P!", "¶");
+            puti("p!", "¶");
             put("+-", "±");
             put("??", "¿");
             put("-d", "đ");
@@ -116,14 +113,10 @@ public class ComposeSequence extends ComposeBase {
             put("W=", "₩");
             put("=W", "₩");
             put("d-", "₫");
-            put("C=", "€");
-            put("=C", "€");
-            put("c=", "€");
-            put("=c", "€");
-            put("E=", "€");
-            put("=E", "€");
-            put("e=", "€");
-            put("=e", "€");
+            puti("c=", "€");
+            puti("=c", "€");
+            puti("e=", "€");
+            puti("=e", "€");
             put("|c", "¢");
             put("c|", "¢");
             put("c/", "¢");
@@ -774,14 +767,12 @@ public class ComposeSequence extends ComposeBase {
             put("_=", "₌");
             put("_(", "₍");
             put("_)", "₎");
-            put("SM", "℠");
+            puti("sm", "℠");
             put("sM", "℠");
             put("Sm", "℠");
-            put("sm", "℠");
-            put("TM", "™");
+            puti("tm", "™");
             put("tM", "™");
             put("Tm", "™");
-            put("tm", "™");
             put("13", "⅓");
             put("23", "⅔");
             put("15", "⅕");
@@ -796,6 +787,8 @@ public class ComposeSequence extends ComposeBase {
             put("78", "⅞");
             put("/←", "↚");
             put("/→", "↛");
+            put("/" + LEFT, "↚");
+            put("/" + RIGHT, "↛");
             put("<-", "←");
             put("->", "→");
             put("/=", "≠");
@@ -906,5 +899,341 @@ public class ComposeSequence extends ComposeBase {
             put("(49)", "㊾");
             put("(50)", "㊿");
             put("\\o/", "🙌");
+
+            // Some arrows
+            put(" " + LEFT, "←");
+            put(" " + RIGHT, "→");
+            put(" " + UP, "↑");
+            put(" " + DOWN, "↓");
+            put("" + LEFT + RIGHT, "↔");
+            put("" + UP + DOWN, "↕");
+            put("" + LEFT + UP, "↖");
+            put("" + RIGHT + UP, "↗");
+            put("" + RIGHT + DOWN, "↘");
+            put("" + LEFT + DOWN, "↙");
+            put("" + LEFT + LEFT, "⇐");
+            put("" + UP + UP, "⇑");
+            put("" + RIGHT + RIGHT, "⇒");
+            put("" + DOWN + DOWN, "⇓");
+            put("=" + LEFT + RIGHT, "⇔");
+            put("=" + UP + DOWN, "⇕");
+            put("=" + LEFT + UP, "⇖");
+            put("=" + RIGHT + UP, "⇗");
+            put("=" + RIGHT + DOWN, "⇘");
+            put("=" + LEFT + DOWN, "⇙");
+
+            put("←→", "↔");
+            put("↑↓", "↕");
+            put("←↑", "↖");
+            put("→↑", "↗");
+            put("→↓", "↘");
+            put("←↓", "↙");
+            put("←←", "⇐");
+            put("↑↑", "⇑");
+            put("→→", "⇒");
+            put("↓↓", "⇓");
+            put("=←→", "⇔");
+            put("=↑↓", "⇕");
+            put("=←↑", "⇖");
+            put("=→↑", "⇗");
+            put("=→↓", "⇘");
+            put("=←↓", "⇙");
+            put("=-", "☞");
+            put("-=", "☜");
+
+            // Cursor keys
+            put("()", "○");
+            put("^-", "△");
+            put("|>", "▻");
+            put("-v", "▽");
+            put("<|", "◁");
+
+            // Stars
+            put("**", "★");
+            put("*0", "☆");
+            put("*3", "⁂");
+            put("*4", "✢");
+            put("*!", "✱");
+
+            // Symbols
+            put("°c", "℃");
+            put("°C", "℃");
+            put("°f", "℉");
+            put("°F", "℉");
+            put("ox", "☠");
+            put("OX", "☠");
+            put("c[]", "☕");
+            put("C[]", "☕");
+            puti(COMPOSE + "tea", "☕");
+            put("/!\\", "⚠");
+            puti(COMPOSE + "zap", "⚡");
+            puti(COMPOSE + "rad", "☢");
+            puti(COMPOSE + "bh", "☣");
+            puti(COMPOSE + "aaaaa", "⛤");
+            put("8!", "❢");
+            put("2!", "‼");
+            puti(COMPOSE + "tel", "☎");
+            put("@/", "✓");
+            put("@@/", "✔");
+            put("@x", "✗");
+            put("@X", "✗");
+            put("@@x", "✘");
+            put("@@X", "✘");
+
+            // Emoji
+            puti(COMPOSE + "penguin", "🐧");
+            puti(COMPOSE + "cat", "🐱");
+            puti(COMPOSE + "eyes", "👀");
+            puti(COMPOSE + "index" + UP, "👆");
+            puti(COMPOSE + "index" + DOWN, "👇");
+            puti(COMPOSE + "index" + LEFT, "👈");
+            puti(COMPOSE + "index" + RIGHT, "👉");
+            puti(COMPOSE + "thumbs" + UP, "👌");
+            puti(COMPOSE + "thumbs" + DOWN, "👍");
+            puti(COMPOSE + "glasses", "👓");
+            puti(COMPOSE + "bust", "👤");
+            puti(COMPOSE + "handbag", "👜");
+            puti(COMPOSE + "alien", "👽");
+            puti(COMPOSE + "skull", "💀");
+            puti(COMPOSE + "light", "💡");
+            puti(COMPOSE + "bomb", "💣");
+            puti(COMPOSE + "zzz", "💤");
+            puti(COMPOSE + "boom", "💥");
+            puti(COMPOSE + "poo", "💩");
+            puti(COMPOSE + "$$$", "💰");
+            puti(COMPOSE + "$card", "💳");
+            puti(COMPOSE + "$bye", "💸");
+            puti(COMPOSE + "chair", "💺");
+            puti(COMPOSE + "computer", "💻");
+            puti(COMPOSE + "briefcase", "💼");
+            puti(COMPOSE + "minidisc", "💽");
+            puti(COMPOSE + "floppy", "💾");
+            puti(COMPOSE + "cd", "💿");
+            puti(COMPOSE + "dvd", "📀");
+            puti(COMPOSE + "folder", "📁");
+            puti(COMPOSE + "openfolder", "📂");
+            puti(COMPOSE + "calendar", "📅");
+            puti(COMPOSE + "clipboard", "📋");
+            puti(COMPOSE + "paperclip", "📎");
+            puti(COMPOSE + "ruler", "📏");
+            puti(COMPOSE + "setsquare", "📐");
+            puti(COMPOSE + "notebook", "📓");
+            puti(COMPOSE + "book", "📕");
+            puti(COMPOSE + "openbook", "📖");
+            puti(COMPOSE + COMPOSE + "book", "📚");
+            puti(COMPOSE + "notes", "📝");
+            puti(COMPOSE + "phone", "📞");
+            puti(COMPOSE + "email", "📧");
+            puti(COMPOSE + "newspaper", "📰");
+            puti(COMPOSE + "mobile", "📱");
+            puti(COMPOSE + "tomobile", "📲");
+            puti(COMPOSE + "silentmobile", "📳");
+            puti(COMPOSE + "offmobile", "📴");
+            puti(COMPOSE + "reception", "📶");
+            puti(COMPOSE + "camera", "📷");
+            puti(COMPOSE + "videocam", "📹");
+            puti(COMPOSE + "tv", "📺");
+            puti(COMPOSE + "radio", "📻");
+            puti(COMPOSE + "videotape", "📼");
+
+            // Some set notation
+            puti("in", "∈");	// Element of
+            puti("-in", "∉");	// Not element of
+            puti("ni", "∋");	// Contains
+            puti("-ni", "∌");	// Does not contain
+            put("0/", "∅");	// Empty set
+            put("/0", "∅");
+            puti("{u", "∪");	// Union
+            put("{^", "∩");	// Intersection
+            put("{(", "⊂");	// Subset of
+            put("{=(", "⊆");	// Subset of or equal to
+            put("!{(", "⊄");	// Not a subset of
+            put("/{(", "⊄");
+            put("{)", "⊃");	// Superset of
+            put("{=)", "⊇");	// Superset of or equal to
+
+            // Maths
+            put("-+", "∓");	// -+
+            puti("sq", "√");	// Square root
+            puti("3r", "∛");	// Cube root
+            puti("4r", "∜");	// 4th root
+            put("88", "∞");	// Infinity
+
+            put("17", "⅐");
+            put("19", "⅑");
+            put("110", "⅒");
+            put("03", "↉");
+
+            // Logic
+            put("/\\", "∧");	// AND
+            put("\\/", "∨");	// OR
+            put("\\_/", "⊻");	// XOR
+            put(".\"", "∴");	// Therefore
+            put("\".", "∵");	// Because
+            puti(COMPOSE + "because", "∵");
+
+            // Cards & dice
+            put("33", "♣");
+            put("<>", "♢");
+            put("3-", "♠");
+            puti("e>", "♡");
+            put("[1]", "⚀");
+            put("[2]", "⚁");
+            put("[3]", "⚂");
+            put("[4]", "⚃");
+            put("[5]", "⚄");
+            put("[6]", "⚅");
+
+            puti("as", "🂡");
+            puti("2s", "🂢");
+            puti("3s", "🂣");
+            puti("4s", "🂤");
+            puti("5s", "🂥");
+            puti("6s", "🂦");
+            puti("7s", "🂧");
+            puti("8s", "🂨");
+            puti("9s", "🂩");
+            puti("ts", "🂪");
+            puti("js", "🂫");
+            puti("ns", "🂬");
+            puti("qs", "🂭");
+            puti("ks", "🂮");
+
+            puti("ah", "🂱");
+            puti("2h", "🂲");
+            puti("3h", "🂳");
+            puti("4h", "🂴");
+            puti("5h", "🂵");
+            puti("6h", "🂶");
+            puti("7h", "🂷");
+            puti("8h", "🂸");
+            puti("9h", "🂹");
+            puti("th", "🂺");
+            puti("jh", "🂻");
+            puti("nh", "🂼");
+            puti("qh", "🂽");
+            puti("kh", "🂾");
+
+            puti("ad", "🃁");
+            puti("2d", "🃂");
+            puti("3d", "🃃");
+            puti("4d", "🃄");
+            puti("5d", "🃅");
+            puti("6d", "🃆");
+            puti("7d", "🃇");
+            puti("8d", "🃈");
+            puti("9d", "🃉");
+            puti("td", "🃊");
+            puti("jd", "🃋");
+            puti("nd", "🃌");
+            puti("qd", "🃍");
+            puti("kd", "🃎");
+
+            puti("ac", "🃑");
+            puti("2c", "🃒");
+            puti("3c", "🃓");
+            puti("4c", "🃔");
+            puti("5c", "🃕");
+            puti("6c", "🃖");
+            puti("7c", "🃗");
+            puti("8c", "🃘");
+            puti("9c", "🃙");
+            puti("tc", "🃚");
+            puti("jc", "🃛");
+            puti("nc", "🃜");
+            puti("qc", "🃝");
+            puti("kc", "🃞");
+
+            puti("cb", "🂠");
+            puti("bj", "🃏");
+            puti("wj", "🃟");
+
+            // Musical notes
+            put("# ", "♩");	// Quarter
+            put("#'", "♪");	// Eighth
+            put("#-#", "♫");	// Beamed eighths
+            put("#=#", "♬");	// Beames sixteenths
+
+            // Smileys
+            put("{]", "😁");	// 😁  GRINNING FACE WITH SMILING EYES
+            put(":']", "😂");	// 😂  FACE WITH TEARS OF JOY
+            put(":D", "😃");	// 😃  SMILING FACE WITH OPEN MOUTH
+            put("{D", "😄");	// 😄  SMILING FACE WITH OPEN MOUTH AND SMILING EYES
+            put("<:D", "😅");	// 😅  SMILING FACE WITH OPEN MOUTH AND COLD SWEAT
+            put("xD", "😆");	// 😆  SMILING FACE WITH OPEN MOUTH AND TIGHTLY-CLOSED EYES
+            put("XD", "😆");
+            puti("o:)", "😇");	// 😇  SMILING FACE WITH HALO
+            put("]:)", "😈");	// 😈  SMILING FACE WITH HORNS
+            put(";)", "😉");	// 😉  WINKING FACE
+            put("})", "😊");	// 😊  SMILING FACE WITH SMILING EYES
+            puti("}p", "😋");	// 😋  FACE SAVOURING DELICIOUS FOOD
+            put("3)", "😌");	// 😌  RELIEVED FACE
+            puti("h)", "😍");	// 😍  SMILING FACE WITH HEART-SHAPED EYES
+            puti("b)", "😎");	// 😎  SMILING FACE WITH SUNGLASSES
+            put(":\\", "😏");	// 😏  SMIRKING FACE
+            put(":|", "😐");	// 😐  NEUTRAL FACE
+            put("|\\", "😒");	// 😒  UNAMUSED FACE
+            put("<:|", "😓");	// 😓  FACE WITH COLD SWEAT
+            put("3|", "😔");	// 😔  PENSIVE FACE
+            put(":3", "😖");	// 😖  CONFOUNDED FACE
+            put(";<3", "😘");	// 😘  FACE THROWING A KISS
+            put("3<3", "😚");	// 😚  KISSING FACE WITH CLOSED EYES
+            puti(";p", "😜");	// 😜  FACE WITH STUCK-OUT TONGUE AND WINKING EYE
+            puti("xp", "😝");	// 😝  FACE WITH STUCK-OUT TONGUE AND TIGHTLY-CLOSED EYES
+            put("<:(", "😞");	// 😞  DISAPPOINTED FACE
+            put(">:(", "😠");	// 😠  ANGRY FACE
+            puti(">:c", "😡");	// 😡  POUTING FACE
+            put("3'(", "😢");	// 😢  CRYING FACE
+            puti("x(", "😣");	// 😣  PERSEVERING FACE
+            puti(":v", "😤");	// 😤  FACE WITH LOOK OF TRIUMPH
+            put(":'(", "😥");	// 😥  DISAPPOINTED BUT RELIEVED FACE
+            put("8(", "😨");	// 😨  FEARFUL FACE
+            puti(":z", "😩");	// 😩  WEARY FACE
+            puti("3z", "😪");	// 😪  SLEEPY FACE
+            puti("xz", "😫");	// 😫  TIRED FACE
+            puti("x'(", "😭");	// 😭  LOUDLY CRYING FACE
+            puti("<:o", "😰");	// 😰  FACE WITH OPEN MOUTH AND COLD SWEAT
+            puti("<8o", "😱");	// 😱  FACE SCREAMING IN FEAR
+            puti("8o", "😲");	// 😲  ASTONISHED FACE
+            put("<:.", "😳");	// 😳  FLUSHED FACE
+            puti("xo", "😵");	// 😵  DIZZY FACE
+            put(": ", "😶");	// 😶  FACE WITHOUT MOUTH
+            put(":[]", "😷");	// 😷  FACE WITH MEDICAL MASK
+
+            // Roman numerals
+            put("%1", "Ⅰ");
+            put("%2", "Ⅱ");
+            put("%3", "Ⅲ");
+            put("%4", "Ⅳ");
+            put("%5", "Ⅴ");
+            put("%6", "Ⅵ");
+            put("%7", "Ⅶ");
+            put("%8", "Ⅷ");
+            put("%9", "Ⅸ");
+            put("%x", "Ⅹ");
+            put("%X", "Ⅹ");
+            put("%_1", "Ⅺ");
+            put("%_2", "Ⅻ");
+            put("%l", "Ⅼ");
+            put("%L", "Ⅼ");
+            put("%c", "Ⅽ");
+            put("%C", "Ⅽ");
+            put("%d", "Ⅾ");
+            put("%D", "Ⅾ");
+            put("%m", "Ⅿ");
+            put("%M", "Ⅿ");
+            put("%vm", "ↁ");
+            put("%VM", "ↁ");
+            put("%tm", "ↂ");
+            put("%TM", "ↂ");
+            //put("%vtm", "ↇ");
+            //put("%VTM", "ↇ");
+            //put("%hm", "ↈ");
+            //put("%HM", "ↈ");
+
+            puti("zwn", "‌");
+            puti("zwj", "‍");
+
+            put("|-|", "Hackers' Keyboard");
    }
 }
