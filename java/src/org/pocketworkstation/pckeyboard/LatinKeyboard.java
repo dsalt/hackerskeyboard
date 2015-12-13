@@ -145,7 +145,7 @@ public class LatinKeyboard extends Keyboard {
                 R.dimen.spacebar_vertical_correction);
         mIsAlphaKeyboard = xmlLayoutResId == R.xml.kbd_qwerty;
         mIsAlphaFullKeyboard = xmlLayoutResId == R.xml.kbd_full;
-        mIsFnFullKeyboard = xmlLayoutResId == R.xml.kbd_full_fn;
+        mIsFnFullKeyboard = xmlLayoutResId == R.xml.kbd_full_fn || xmlLayoutResId == R.xml.kbd_compact_fn;
         // The index of space key is available only after Keyboard constructor has finished.
         mSpaceKeyIndexArray = new int[] { indexOf(LatinIME.ASCII_SPACE) };
         // TODO remove this initialization after cleanup
@@ -262,9 +262,7 @@ public class LatinKeyboard extends Keyboard {
 
     public void updateSymbolIcons(boolean isAutoCompletion) {
         updateDynamicKeys();
-        if (mSpaceKey != null) {
-            updateSpaceBarForLocale(isAutoCompletion);
-        }
+        updateSpaceBarForLocale(isAutoCompletion);
     }
 
     private void setDefaultBounds(Drawable drawable) {
@@ -342,10 +340,12 @@ public class LatinKeyboard extends Keyboard {
             key.modifier = true;
             if (key.label != null) {
                 key.popupCharacters = (key.popupCharacters == null) ?
-                        key.label : key.label + key.popupCharacters.toString();
+                        key.label + key.shiftLabel.toString() :
+                            key.label + key.shiftLabel.toString() + key.popupCharacters.toString();
             }
         }
         key.label = null;
+        key.shiftLabel = null;
         key.codes = new int[] { LatinKeyboardView.KEYCODE_VOICE };
         key.icon = micWithSettingsHintDrawable;
         key.iconPreview = mMicPreviewIcon;
@@ -398,6 +398,7 @@ public class LatinKeyboard extends Keyboard {
     }
 
     private void updateSpaceBarForLocale(boolean isAutoCompletion) {
+        if (mSpaceKey == null) return;
         // If application locales are explicitly selected.
         if (mLocale != null) {
             mSpaceKey.icon = new BitmapDrawable(mRes,
@@ -873,7 +874,7 @@ public class LatinKeyboard extends Keyboard {
             mHeight = height;
             mTextPaint = new TextPaint();
             mTextPaint.setTextSize(getTextSizeFromTheme(android.R.style.TextAppearance_Medium, 18));
-            mTextPaint.setColor(R.color.latinkeyboard_transparent);
+            mTextPaint.setColor(mRes.getColor(R.color.latinkeyboard_transparent));
             mTextPaint.setTextAlign(Align.CENTER);
             mTextPaint.setAlpha(OPACITY_FULLY_OPAQUE);
             mTextPaint.setAntiAlias(true);

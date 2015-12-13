@@ -47,6 +47,11 @@ public final class GlobalKeyboardSettings {
     public boolean compactModeEnabled = false;
     public int chordingCtrlKey = 0;
     public int chordingAltKey = 0;
+    public int chordingMetaKey = 0;
+    public float keyClickVolume = 0.0f;
+    public int keyClickMethod = 0;
+    public boolean capsLock = true;
+    public boolean shiftLockModifiers = false;
     //
     // Read by LatinKeyboardBaseView
     public float labelScalePref = 1.0f;
@@ -153,11 +158,11 @@ public final class GlobalKeyboardSettings {
 
         addStringPref("pref_suggested_punctuation", new StringPref() {
             public void set(String val) { suggestedPunctuation = val; }
-            public String getDefault() { return res.getString(R.string.suggested_punctuations); }
+            public String getDefault() { return res.getString(R.string.suggested_punctuations_default); }
             public int getFlags() { return FLAG_PREF_NEW_PUNC_LIST; }
         });
 
-        addStringPref("pref_label_scale", new StringPref() {
+        addStringPref("pref_label_scale_v2", new StringPref() {
             public void set(String val) { labelScalePref = Float.valueOf(val); }
             public String getDefault() { return "1.0"; }
             public int getFlags() { return FLAG_PREF_RECREATE_INPUT_VIEW; }
@@ -185,6 +190,36 @@ public final class GlobalKeyboardSettings {
             public void set(String val) { chordingAltKey = Integer.valueOf(val); }
             public String getDefault() { return res.getString(R.string.default_chording_alt_key); }
             public int getFlags() { return FLAG_PREF_RESET_KEYBOARDS; }
+        });
+
+        addStringPref("pref_chording_meta_key", new StringPref() {
+            public void set(String val) { chordingMetaKey = Integer.valueOf(val); }
+            public String getDefault() { return res.getString(R.string.default_chording_meta_key); }
+            public int getFlags() { return FLAG_PREF_RESET_KEYBOARDS; }
+        });
+
+        addStringPref("pref_click_volume", new StringPref() {
+            public void set(String val) { keyClickVolume = Float.valueOf(val); }
+            public String getDefault() { return res.getString(R.string.default_click_volume); }
+            public int getFlags() { return FLAG_PREF_NONE; }
+        });
+
+        addStringPref("pref_click_method", new StringPref() {
+            public void set(String val) { keyClickMethod = Integer.valueOf(val); }
+            public String getDefault() { return res.getString(R.string.default_click_method); }
+            public int getFlags() { return FLAG_PREF_NONE; }
+        });
+
+        addBooleanPref("pref_caps_lock", new BooleanPref() {
+            public void set(boolean val) { capsLock = val; }
+            public boolean getDefault() { return res.getBoolean(R.bool.default_caps_lock); }
+            public int getFlags() { return FLAG_PREF_NONE; }
+        });
+
+        addBooleanPref("pref_shift_lock_modifiers", new BooleanPref() {
+            public void set(boolean val) { shiftLockModifiers = val; }
+            public boolean getDefault() { return res.getBoolean(R.bool.default_shift_lock_modifiers); }
+            public int getFlags() { return FLAG_PREF_NONE; }
         });
 
         // Set initial values

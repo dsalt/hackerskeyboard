@@ -123,6 +123,7 @@ public class Keyboard {
     private Key mShiftKey;
     private Key mAltKey;
     private Key mCtrlKey;
+    private Key mMetaKey;
 
     /** Key index for the shift key, if present */
     private int mShiftKeyIndex = -1;
@@ -821,7 +822,7 @@ public class Keyboard {
         DisplayMetrics dm = context.getResources().getDisplayMetrics();
         mDisplayWidth = dm.widthPixels;
         mDisplayHeight = dm.heightPixels;
-        //Log.v(TAG, "keyboard's display metrics:" + dm);
+        Log.v(TAG, "keyboard's display metrics:" + dm + ", mDisplayWidth=" + mDisplayWidth);
 
         mDefaultHorizontalGap = 0;
         mDefaultWidth = mDisplayWidth / 10;
@@ -1063,6 +1064,11 @@ public class Keyboard {
         return mAltKey;
     }
 
+    public Key setMetaIndicator(boolean active) {
+        if (mMetaKey != null) mMetaKey.on = active;
+        return mMetaKey;
+    }
+
     public boolean isShiftCaps() {
         return mShiftState == SHIFT_CAPS || mShiftState == SHIFT_CAPS_LOCKED;
     }
@@ -1203,6 +1209,8 @@ public class Keyboard {
                               mCtrlKey = key;
                           } else if (key.codes[0] == LatinKeyboardView.KEYCODE_ALT_LEFT) {
                               mAltKey = key;
+                          } else if (key.codes[0] == LatinKeyboardView.KEYCODE_META_LEFT) {
+                              mMetaKey = key;
                           }
                         }
                     } else if (TAG_KEYBOARD.equals(tag)) {
@@ -1233,10 +1241,11 @@ public class Keyboard {
     }
 
     public void setKeyboardWidth(int newWidth) {
+        Log.i(TAG, "setKeyboardWidth newWidth=" + newWidth + ", mTotalWidth=" + mTotalWidth);
         if (newWidth <= 0) return;  // view not initialized?
         if (mTotalWidth <= newWidth) return;  // it already fits
         float scale = (float) newWidth / mDisplayWidth;
-        //Log.i("PCKeyboard", "Rescaling keyboard: " + mTotalWidth + " => " + newWidth);
+        Log.i("PCKeyboard", "Rescaling keyboard: " + mTotalWidth + " => " + newWidth);
         for (Key key : mKeys) {
             key.x = Math.round(key.realX * scale);
         }

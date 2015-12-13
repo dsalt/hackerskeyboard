@@ -218,6 +218,8 @@
     <string name="key_ab10_main">/</string>
     <string name="key_ab10_shift">\?</string>
     <string name="key_ab10_alt">/\?¿</string>
+    
+    <string name="key_space_shift"></string>
 
 
     <string name="key_compact_2_shift">\@</string>

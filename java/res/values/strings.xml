@@ -434,13 +434,26 @@
         <item>58</item>
     </string-array>
 
+    <string name="title_chording_meta_key">Meta key code</string>
+    <string name="default_chording_meta_key">0</string>
+    <string-array name="chording_meta_key_entries">
+        <item>None (ignored when not modifying other keys)</item>
+        <item>Left Meta</item>
+        <item>Right Meta</item>
+    </string-array>
+    <string-array name="chording_meta_key_values">
+        <item>0</item>
+        <item>117</item>
+        <item>118</item>
+    </string-array>
+    
     <string name="title_suggestions_in_landscape">Suggestions in landscape mode</string>
     <string name="summary_suggestions_in_landscape_true">Same as in portrait mode</string>
     <string name="summary_suggestions_in_landscape_false">Hide suggestions in landscape mode</string>
 
-    <string name="title_fullscreen_override">Landscape mode editor override</string>
-    <string name="summary_fullscreen_override_true">Always use standard view</string>
-    <string name="summary_fullscreen_override_false">Use fullscreen editor on small devices</string>
+    <string name="title_fullscreen_override">Landscape mode fullscreen editor</string>
+    <string name="summary_fullscreen_override_true">Disabled, use standard view</string>
+    <string name="summary_fullscreen_override_false">Enabled on small devices</string>
 
     <string name="title_force_keyboard_on">Show soft keyboard</string>
     <string name="summary_force_keyboard_on_true">Always</string>
@@ -456,6 +469,14 @@
     <string name="summary_connectbot_tab_hack_true">Enable compatibility workaround</string>
     <string name="summary_connectbot_tab_hack_false">Send plain Tab key event</string>
 
+    <string name="title_caps_lock">Double-tap Shift mode</string>
+    <string name="summary_caps_lock_true">Caps Lock (q1 => Q1)</string>
+    <string name="summary_caps_lock_false">Shift Lock (q1 => Q!)</string>
+
+    <string name="title_shift_lock_modifiers">Apply Shift Lock to modifier keys?</string>
+    <string name="summary_shift_lock_modifiers_true">Yes, including arrow keys</string>
+    <string name="summary_shift_lock_modifiers_false">No, normal keys only</string>
+    
     <string name="title_hint_mode">Labeled alternate keys</string>
     <string-array name="hint_modes">
         <item>Hide hint labels</item>
@@ -491,118 +512,33 @@
         <item>4</item>
     </string-array>
  
-    <!-- Hack: used for both entries and values, the parser ignores non-numeric part -->
-    <string-array name="keyboard_height_entries">
-        <item>15%</item>
-        <item>20%</item>
-        <item>25%</item>
-        <item>30%</item>
-        <item>35%</item>
-        <item>40%</item>
-        <item>45%</item>
-        <item>50%</item>
-        <item>55%</item>
-        <item>60%</item>
-        <item>65%</item>
-        <item>70%</item>
-        <item>75%</item>
-    </string-array>
     <string name="percent">percent</string>
 
     <string name="title_top_row_scale">5th row height adjustment</string>
-    <string-array name="top_row_scale_entries">
-        <item>50%</item>
-        <item>60%</item>
-        <item>70%</item>
-        <item>80%</item>
-        <item>90%</item>
-        <item>100%</item>
-    </string-array>
-    <string-array name="top_row_scale_values">
-        <item>0.5</item>
-        <item>0.6</item>
-        <item>0.7</item>
-        <item>0.8</item>
-        <item>0.9</item>
-        <item>1.0</item>
-    </string-array>
-        
         
     <string name="title_label_scale">Key label scaling</string>
     <string name="title_candidate_scale">Suggestion label scaling</string>
-        <string-array name="label_scale_entries">
-        <item>50%</item>
-        <item>60%</item>
-        <item>70%</item>
-        <item>80%</item>
-        <item>90%</item>
-        <item>100%</item>
-        <item>110%</item>
-        <item>120%</item>
-        <item>130%</item>
-        <item>140%</item>
-        <item>150%</item>
-        <item>175%</item>
-        <item>200%</item>
-        <item>250%</item>
-        <item>300%</item>
-        <item>350%</item>
-        <item>400%</item>
-        <item>600%</item>
-        <item>800%</item>
-    </string-array>
-    <string-array name="label_scale_values">
-        <item>0.5</item>
-        <item>0.6</item>
-        <item>0.7</item>
-        <item>0.8</item>
-        <item>0.9</item>
-        <item>1.0</item>
-        <item>1.1</item>
-        <item>1.2</item>
-        <item>1.3</item>
-        <item>1.4</item>
-        <item>1.5</item>
-        <item>1.75</item>
-        <item>2.0</item>
-        <item>2.5</item>
-        <item>3.0</item>
-        <item>3.5</item>
-        <item>4.0</item>
-        <item>6.0</item>
-        <item>8.0</item>
-    </string-array>
 
-    <!-- Vibration duration in milliseconds, for key presses in the IME. This can be hardware
-        dependent and may require overriding with a device specific overlay. Default is in durations.xml -->
-    <!-- Hack: used for both entries and values, the parser ignores non-numeric part -->
-	<string name="title_vibrate_len">Vibrate duration</string>
-    <string-array name="vibrate_duration_entries">
-        <item>5 ms</item>
-        <item>10 ms</item>
-        <item>15 ms</item>
-        <item>20 ms</item>
-        <item>30 ms</item>
-        <item>40 ms</item>
-        <item>50 ms</item>
-        <item>75 ms</item>
-        <item>100 ms</item>
-        <item>200 ms</item>
-    </string-array>
+    <string name="title_vibrate_len">Vibrate duration</string>
 
+    <string name="title_click_volume">Key click volume</string>
+    <string name="default_click_volume">0.2</string>
+    <string name="title_click_method">Click volume control method</string>
+    <string name="default_click_method">0</string>
+    <string-array name="click_method_entries">
+        <item>System default (ignore click volume)</item>
+        <item>Absolute click volume</item>
+        <item>Follow media volume</item>
+        <item>Reverse media volume</item>
+    </string-array>
+    <string-array name="click_method_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    
     <string name="title_long_press_duration">Long-press duration</string>
-    <string-array name="long_press_duration_entries">
-        <item>100 ms</item>
-        <item>200 ms</item>
-        <item>300 ms</item>
-        <item>400 ms</item>
-        <item>500 ms</item>
-        <item>600 ms</item>
-        <item>700 ms</item>
-        <item>800 ms</item>
-        <item>1000 ms</item>
-        <item>2000 ms</item>
-    </string-array>
 
     <string name="title_render_mode">Drawing method</string>
     <string name="render_mode_unavailable">(not changeable on this device)</string>
@@ -684,8 +620,8 @@
     <!-- Title for Latin keyboard debug settings activity / dialog -->
     <string name="english_ime_debug_settings" translatable="false">Debug settings</string>
     <string name="prefs_debug_mode" translatable="false">Debug Mode</string>
-    <string name="main_setup_configure_imes">Configure input methods</string>
-    <string name="main_setup_set_ime">Set current input method</string>
+    <string name="main_setup_configure_imes">Enable keyboard</string>
+    <string name="main_setup_set_ime">Set input method</string>
     <string name="main_setup_get_dicts">Get dictionaries</string>
     <string name="main_setup_input_lang">Input languages</string>
     <string name="main_body"><Data>
@@ -696,7 +632,7 @@
         
         <h3>Add the keyboard to the system's input method list:</h3>
         <blockquote>
-          <p>&#8226; Open the system input settings configuration by pressing the <b>Configure input methods</b> button above.</p>
+          <p>&#8226; Open the system input settings configuration by pressing the <b>Enable Keyboard</b> button above.</p>
           <p>&#8226; Find <i>Hacker's Keyboard</i> in the input method list, tap the checkmark to switch it on.</p>
           <p>&#8226; Acknowledge the warning shown by the system. The system always shows this message when enabling a third-party input method.</p>
           <p>&#8226; Press the <i>Back</i> button to return to this page.</p>
@@ -704,7 +640,7 @@
         
         <h3>Choose the currently active input method:</h3>
         <blockquote>
-          <p>&#8226; Press the <b>Set current input method</b> button above.</p>
+          <p>&#8226; Press the <b>Set input method</b> button above.</p>
           <p>&#8226; Select <i>Hacker's Keyboard</i> from the list.</p>
         </blockquote>
 
@@ -725,4 +661,7 @@
       "]]>
     </Data></string>
     <string name="text_test">Test</string>
+    <string name="seek_pref_0">0%</string>
+    <string name="seek_pref_val">x%</string>
+    <string name="seek_pref_max">100%</string>
 </resources>
