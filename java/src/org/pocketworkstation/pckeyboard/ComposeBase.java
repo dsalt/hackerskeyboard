@@ -167,5 +167,4 @@ public abstract class ComposeBase {
     protected static final char F11         = (char)LatinKeyboardView.KEYCODE_FKEY_F11;
     protected static final char F12         = (char)LatinKeyboardView.KEYCODE_FKEY_F12;
     protected static final char NUM_LOCK    = (char)LatinKeyboardView.KEYCODE_NUM_LOCK;
-    protected static char COMPOSE = (char)LatinKeyboardView.KEYCODE_DPAD_CENTER;
 }
