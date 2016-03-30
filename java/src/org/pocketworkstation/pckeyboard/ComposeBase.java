@@ -171,6 +171,10 @@ public abstract class ComposeBase {
             Log.w(TAG, "compose sequence is a duplicate: " + format(key));
         else if (mPrefixes.contains(key))
             Log.w(TAG, "compose sequence is a subset: " + format(key));
+        else if (key.charAt(0) == ESCAPE) {
+            Log.e(TAG, "compose sequence clashes with code points: " + format(key));
+            return;
+        }
 
         mMap.put(key, value);
     	for (int i = 1; i < key.length(); ++i) {
